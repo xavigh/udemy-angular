@@ -1,0 +1,27 @@
+<h1>Searching for . . .<small> {{inputTxt}}</small></h1>
+<hr>
+<div class="row" *ngIf="heroes.length == 0">
+    <div class="col-12">
+        <div class="alert alert-info">
+            The search did not find any content with <span class="lead font-weight-bold">. . . {{inputTxt}}</span>
+        </div>
+    </div>
+</div>
+<div class="card-columns">
+
+
+    <div class="card p-3 " *ngFor="let heroe of heroes; let i=index">
+        <img [src]="heroe.img" class="card-img-top img-fluid" [alt]="heroe.nombre">
+        <div class="card-block">
+            <h5 class="card-title">{{ heroe.nombre }}</h5>
+            <p class="card-text">{{heroe.bio}}</p>
+            <p class="card-text"><small class="text-muted">{{heroe.aparicion}}</small></p>
+            <button (click)="displayHeroe(i)" type="button" class="btn btn-primary btn-block">see more . . .
+            </button>
+            <!-- <a [routerLink]="['/heroe',i]" class="btn btn-outline-primary">see more . . . </a> -->
+        </div>
+    </div>
+
+
+
+</div>
